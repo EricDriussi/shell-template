@@ -16,12 +16,13 @@ fi
 cd "$(dirname "$0")"
 # You might have a legitimate need to avoid this
 
-# Always double-quote vars
-randomVar="Hi there!"
-echo "Safely quoted random var:"
-echo "${randomVar}"
+# Source files like so
+source "core/flow_control.sh"
+source "core/functions.sh"
+source "core/redirect_output.sh"
+source "core/vars.sh"
 
-# Prefer [[ ]] over [ ] or test for if/while statements
+# Offer some help!
 if [[ "${1-}" =~ ^-*h(elp)?$ ]]; then # Accept -h, --help, help, h and -help
 	echo 'Usage: ./template.sh arg-one arg-two
 
@@ -34,9 +35,6 @@ This is a bash script template to make your life easier.
 	exit
 fi
 
-# Send errors to stderr
-echo '[[ERROR]] -> OMG AN ERROR!!!' >&2
-
 main() {
 	# Following set -o nounset
 	echo "The following var definitely exists"
@@ -44,12 +42,11 @@ main() {
 	echo "But I'm unsure about this one"
 	echo "${MADEUPVAR-}"
 
-	# Use local vars if inside a function
-	local niceVar=1234
-	echo "Do stuff with local var:"
-	echo "${niceVar}"
+	# Run custom func (sourced from functions.sh)
+	a_func
+
 }
 
 main "$@"
 
-# Shellcheck (https://www.shellcheck.net/) is your friend. Use it.
+# Shellcheck (https://www.shellcheck.net/) and Explainshell (https://explainshell.com/) are your friends!
