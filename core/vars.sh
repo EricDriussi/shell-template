@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+# Given set -o nounset (line 5 in template.sh)
+echo "The following var definitely exists"
+echo "$HOME"
+echo "But I'm unsure about this one"
+echo "${MADE_UP_VAR-}"
+# Use ${VAR-} to safely source a possibly unsed variable
+
 # Always double-quote vars
 random_var="Hi there!"
 echo "Safely quoted random var:"
