@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+echo -e '\n' ~~~~~~~~~~~~~~~~~~~ Handling Variables ~~~~~~~~~~~~~~~~~~~ '\n'
+
 # Given set -o nounset (line 5 in template.sh)
 echo "The following var definitely exists"
 echo "$HOME"
@@ -20,5 +22,5 @@ my_array=(1 "2" 4 "hey!" 8)
 echo "Array element num 3 is: ${my_array[3]}"
 
 # Store the output of a command in a variable with $()
-ls_output=$(ls -la)
-echo "$ls_output"
+cmd_output=$(whoami)
+echo "My name is... ${cmd_output}"

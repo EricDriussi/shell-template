@@ -2,6 +2,7 @@
 
 # Functions are declared in two ways:
 a_func() {
+	echo -e '\n' ~~~~~~~~~~~~~~~~~~~~~~~ Functions ~~~~~~~~~~~~~~~~~~~~~~~ '\n'
 	# Use local vars if inside a function
 	local nice_var=1234
 	echo "Use like any other var:"

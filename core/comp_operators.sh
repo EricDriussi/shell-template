@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+echo -e '\n' ~~~~~~~~~~~~~~~~~~ Comparison Operators ~~~~~~~~~~~~~~~~~~ '\n'
+
 # Use = and != to compare STRING equality
 if [[ "hi" = "hi" && "MOM" != "mom" ]]; then
 	echo "hi mom!"

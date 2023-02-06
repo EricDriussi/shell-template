@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+echo -e '\n' ~~~~~~~~~~~~~~~ Handling STDOUT and STDERR ~~~~~~~~~~~~~~~ '\n'
+
 # Silence all errors of a command
 ls -la 2>/dev/null
 # Silence all output of a command (including errors)

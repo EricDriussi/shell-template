@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
-# Prefer [[ ]] over [ ] or test for if/while statements
+
+echo -e '\n' ~~~~~~~~~~~~~~~~~~~~~~ Flow Control ~~~~~~~~~~~~~~~~~~~~~~ '\n'
+# Prefer [[ ]] over [ ], ( ), or 'test' for if/while statements
+# Check man test for other useful comparison flags
 
 # Use if statements to test for things:
 # If var is set
@@ -29,8 +32,8 @@ for ((i = 0; i < 3; i++)); do
 done
 
 # Classic for_in loop
-for hi in $(seq 1 3); do
-	echo "$hi mom"
+for foo in $(seq 1 3); do
+	echo "$foo bar"
 done
 
 # Loop over a list!
