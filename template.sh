@@ -28,6 +28,7 @@ This helps document the script.
 fi
 
 # Source files like so
+source "core/comp_operators.sh"
 source "core/flow_control.sh"
 source "core/functions.sh"
 source "core/redirect_output.sh"
