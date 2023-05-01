@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-echo -e '\n' ~~~~~~~~~~~~~~~~~~ Comparison Operators ~~~~~~~~~~~~~~~~~~ '\n'
+section_header "Comparison Operators"
 
 # Use = and != to compare STRING equality
 if [[ "hi" = "hi" && "MOM" != "mom" ]]; then

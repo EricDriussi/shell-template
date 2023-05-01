@@ -2,7 +2,7 @@
 # When in doubt, use bash (and set a file extension!)
 
 # If accessing unset var, exit script
-# (use ${VAR-} if not sure if a var is set -> more in var.sh)
+# (use ${VAR-} if not sure if a var is set -> more in vars.sh)
 set -o nounset
 # If any command fails, exit script
 set -o errexit
@@ -28,11 +28,13 @@ This helps document the script.
 fi
 
 # Source files like so
-source "core/comp_operators.sh"
-source "core/flow_control.sh"
 source "core/functions.sh"
+source "core/comp_operators.sh"
+source "core/conditionals.sh"
+source "core/loops.sh"
 source "core/redirect_output.sh"
 source "core/vars.sh"
+source "core/misc.sh"
 
 main() {
 	a_func # Run custom func (sourced from functions.sh)

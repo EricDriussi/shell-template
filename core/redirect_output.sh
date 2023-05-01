@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-echo -e '\n' ~~~~~~~~~~~~~~~ Handling STDOUT and STDERR ~~~~~~~~~~~~~~~ '\n'
+section_header "Handling STDOUT and STDERR"
 
 # Silence all errors of a command
 ls -la 2>/dev/null
