@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 # When in doubt, use bash (and set a file extension!)
 
+function cleanUp() {
+	echo "This always gets printed right before the process ends (or its stopped)"
+}
+trap cleanUp EXIT HUP INT TERM
+
 # If accessing unset var, exit script
 # (use ${VAR-} if not sure if a var is set -> more in vars.sh)
 set -o nounset
@@ -20,7 +25,7 @@ cd "$(dirname "$0")" # You might have a legitimate need to avoid this
 if [[ "${1-}" =~ ^-*h(elp)?$ ]]; then # Accept -h, --help, help, h and -help
 	echo 'Usage: ./template.sh arg-one arg-two
 
-Ideally, you should allow for long options (--stuff instead of -s).
+Ideally, you should also allow for long options (--stuff and -s).
 This helps document the script.
 
 '
